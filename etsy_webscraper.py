@@ -16,7 +16,7 @@ for i in range(len(links)):
         html_text = requests.get(vgm_url).text
         soup = BeautifulSoup(html_text, 'html.parser')
         if soup.body.find('span', attrs={'class': 'wt-text-caption wt-no-wrap'}) is not None:
-            sales.append(soup.body.find('span', attrs={'class': 'wt-text-caption wt-no-wrap'}).text)   
+            sales.append(soup.body.find('span', attrs={'class': 'wt-text-caption wt-no-wrap'})).text[:-6].replace(',','')   
 
         else:
             sales.append( '-')
