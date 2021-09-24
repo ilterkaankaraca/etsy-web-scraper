@@ -8,7 +8,7 @@ def getSales(link : str):
   try:
     request= requests.get(link)
   except requests.exceptions.RequestException or ConnectionAbortedError:
-  request = requests.get(link)
+    request = requests.get(link)
   htmlText = request.text
   status = request.status_code
   soup = BeautifulSoup(htmlText, 'html.parser')
